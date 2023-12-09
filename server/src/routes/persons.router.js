@@ -1,9 +1,14 @@
 const express = require('express')
 
-const {httpgetAllPersons,} = require('./person.controller')
+const {
+    httpgetAllPersons,
+    httpAddnewPersons
+} = require('./person.controller')
 
 const personsRouter = express.Router()
-personsRouter.get('/persons',httpgetAllPersons )
+
+personsRouter.get('/',httpgetAllPersons )
+personsRouter.post('/',httpAddnewPersons )
 
 module.exports= personsRouter
 

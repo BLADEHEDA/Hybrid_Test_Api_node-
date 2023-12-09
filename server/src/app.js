@@ -11,7 +11,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use(todosRouter)
- app.use(personsRouter)
+ app.use('/persons', personsRouter)
  app.use(mordan('dev'))
 
 module.exports= app
