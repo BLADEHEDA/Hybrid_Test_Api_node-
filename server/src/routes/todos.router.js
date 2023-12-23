@@ -3,6 +3,6 @@ const {httpgetAlltodos,
 }= require('./todos.controller')
 
 const todosRouter= express.Router()
-todosRouter.get('/todos',httpgetAlltodos)
+todosRouter.get('/',httpgetAlltodos)
 
  module.exports =todosRouter

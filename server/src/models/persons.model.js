@@ -11,6 +11,7 @@ const persons = new Map();
   persons.set( person.personId,person )
 
   const getAllPersons=()=>{
+    // console.log(NaN(100) );
     return Array.from(persons.values())
   }
  // function to enable post requests 

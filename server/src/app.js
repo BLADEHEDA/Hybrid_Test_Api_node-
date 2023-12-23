@@ -10,7 +10,7 @@ const app= express()
 app.use(cors())
 app.use(express.json())
 
-app.use(todosRouter)
+app.use('/todos', todosRouter)
  app.use('/persons', personsRouter)
  app.use(mordan('dev'))
 
