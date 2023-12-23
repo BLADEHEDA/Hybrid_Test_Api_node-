@@ -11,7 +11,6 @@ const persons = new Map();
   persons.set( person.personId,person )
 
   const getAllPersons=()=>{
-    // console.log(NaN(100) );
     return Array.from(persons.values())
   }
  // function to enable post requests 
@@ -26,9 +25,23 @@ const persons = new Map();
        )
  }
 
+ // handle the delete request 
+//check to see if the person is available 
+   function existPersonWithId(personId){
+    return persons.has(personId)
+  }
+
+ function DeletePersonbyId (personId){
+  const deleted =   persons.delete(personId)
+  persons.delete(personId)
+ return deleted
+ }
+
   module.exports={
     getAllPersons,
-    addnewPerson
+    addnewPerson,
+    existPersonWithId,
+    DeletePersonbyId 
 }
   
 
