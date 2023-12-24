@@ -32,8 +32,7 @@ const persons = new Map();
   }
 
  function DeletePersonbyId (personId){
-  const deleted =   persons.delete(personId)
-  persons.delete(personId)
+  const deleted = persons.delete(personId)
  return deleted
  }
 
