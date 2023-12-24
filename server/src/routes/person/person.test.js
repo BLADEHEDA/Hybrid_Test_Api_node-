@@ -17,7 +17,7 @@ describe('Test POST /persons', () => {
       .post('/persons')
       .send({
         personName: 'Bruno',
-        age: 22, // Send age as a number
+        age: 22, 
         occupation: 'Engineer',
         residence: 'Buea',
       })
@@ -35,7 +35,20 @@ describe('Test POST /persons', () => {
     });
   });
 
-  test('it should catch any required missing properties', () => {
+  test('it should catch any required missing properties', async() => {
+    const response = await request(app)
+    .post('/persons')
+    .send({
+        personName: 'Bruno',
+        occupation: 'Engineer',
+        residence: 'Buea',
+    })
+    .expect('Content-Type', /json/)
+    .expect(400)
+    expect(response.body).toString({
+        error:'Missing Person property'
+    })
+
     // Your test for missing properties goes here
   });
 });
