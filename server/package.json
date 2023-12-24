@@ -98,7 +98,7 @@
   },
   "scripts": {
     "test": "jest",
-    "test-watch":"jest --watch",
+    "test-watch": "jest --watch",
     "watch": "nodemon src/server.js",
     "start": "node src/server.js"
   },
@@ -106,6 +106,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.3.10",
+    "jest-extended": "^4.0.2",
     "nodemon": "^3.0.1"
   },
   "description": ""
